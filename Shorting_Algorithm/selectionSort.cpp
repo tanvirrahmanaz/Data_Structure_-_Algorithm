@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include<bits/stdc++.h> //(O(n2))
 using namespace std;
 
 void selectionSort(int arr[], int n){
