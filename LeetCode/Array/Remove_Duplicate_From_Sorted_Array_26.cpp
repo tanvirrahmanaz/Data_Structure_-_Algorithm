@@ -2,21 +2,38 @@
 #include<vector>
 using namespace std;
 
-class Solution {
-    public:
-    int removeDuplicated(vector<int>& nums){
+// class Solution {
+//     public:
+//     int removeDuplicates(vector<int>& nums){
         
-        if(nums.size() == 0 ) return 0;
+//         if(nums.size() == 0 ) return 0;
 
-        for(int i=0; i<nums.size()-1 ; i++){
-            if(nums[i] == nums[i+1]){
-                nums.erase(nums.begin() + i);
-                i--;
+//         for(int i=0; i<nums.size()-1 ; i++){
+//             if(nums[i] == nums[i+1]){
+//                 nums.erase(nums.begin() + i);
+//                 i--;
+//             }
+//         }
+
+//         return nums.size();
+
+//     }
+// };
+
+
+
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+        if(nums.size() == 0) return 0;
+        int res = 1;
+        for(int i = 1; i < nums.size(); i++){
+            if(nums[i] != nums[i - 1]){
+                nums[res] = nums[i];
+                res++;
             }
         }
-
-        return nums.size();
-
+        return res;
     }
 };
 
@@ -33,7 +50,7 @@ int main(){
         cin>> nums[i];
     }
 
-    int result = sol.removeDuplicated(nums);
+    int result = sol.removeDuplicates(nums);
 
     cout << "The size of the array after removing duplicates is: " << result << endl;
     cout << "The modified array is: ";
