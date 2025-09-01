@@ -8,7 +8,7 @@ public:
     bool isPalindrome(int x) {
         int i=x,rem=0,result=0 ;
 
-        if(x < 0){
+        if(x < 0){  
             return false;
         }
         else{

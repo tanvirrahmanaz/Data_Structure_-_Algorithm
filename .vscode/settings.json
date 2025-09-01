@@ -3,5 +3,27 @@
         "*.tcc": "cpp",
         "iostream": "cpp",
         "algorithm": "cpp"
-    }
+    },
+
+    // --- সাজেশন বন্ধ করার সেটিংস ---
+    
+    // VS Code-এর ডিফল্ট সাজেশনগুলো বন্ধ করার জন্য
+    "editor.quickSuggestions": {
+        "other": "off",
+        "comments": "off",
+        "strings": "off"
+    },
+    // বিশেষ ক্যারেক্টার (যেমন . বা () টাইপ করলে সাজেশন আসা বন্ধ করবে
+    "editor.suggestOnTriggerCharacters": false,
+    
+    // শব্দ টাইপ করার সাথে সাথে সাজেশন আসা বন্ধ করবে
+    "editor.wordBasedSuggestions": "off",
+
+    // --- আপনার ইন্সটল করা AI টুলস বন্ধ করার জন্য ---
+
+    // GitHub Copilot-এর সাজেশন বন্ধ করতে (যদি ইন্সটল করা থাকে)
+    "github.copilot.inlineSuggest.enabled": false,
+
+    // Tabnine-এর সাজেশন বন্ধ করতে (যদি ইন্সটল করা থাকে)
+    "tabnine.experimentalAutoImports": false
 }
