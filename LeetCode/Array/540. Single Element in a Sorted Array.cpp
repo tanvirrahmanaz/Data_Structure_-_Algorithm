@@ -8,11 +8,19 @@ class Solution{
         int start = 0;
         int end = nums.size() -1;
 
+        //nums = [1]
+        if(nums.size() == 1){
+            return nums[0];
+        }
+
+        //nums [1,2,2]
+        if(nums[0] != nums[1]) return nums[0];
+
+        //nums[1,1,2]
+        if(nums[end] != nums[end-1]) return nums[end];
+
         while(start <= end){
             int mid = start + (end - start)/2 ;
-            
-            cout<<"mid "<<nums[mid]<<endl;
-            cout<<"index " <<mid<<endl;
             
             if(nums[mid-1]!= nums[mid] && nums[mid+1]!= nums[mid]){
                 return nums[mid];

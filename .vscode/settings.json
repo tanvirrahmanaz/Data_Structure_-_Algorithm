@@ -2,7 +2,8 @@
     "files.associations": {
         "*.tcc": "cpp",
         "iostream": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "cmath": "cpp"
     },
 
     // --- সাজেশন বন্ধ করার সেটিংস ---
