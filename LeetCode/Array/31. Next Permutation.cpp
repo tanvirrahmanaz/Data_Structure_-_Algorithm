@@ -6,19 +6,33 @@ using namespace std;
 class Solution {
 public:
     void nextPermutation(vector<int>& nums) {
-        int n = nums.size();
-        int index = n-2;
-        bool tar = true;
+        int pivot = -1, n=nums.size();
 
-        while(tar){
-            if(index < 0) break;
-
-            if(nums[index] < nums[index+1]){
-                tar = false;
-                swap(nums[index-1], nums[n-1]);
+        for(int i=n-1; i>=0; i--){
+            if(nums[i] < nums[i+1]){
+                pivot = i;
+                break;
             }
         }
-        return ;
+
+        if(pivot == -1){
+            reverse(nums.begin(), nums.end());
+            return ;
+        }
+
+
+        for(int i= n-1; i>pivot; i--){
+            if(nums[i] > nums[pivot]){
+                swap(nums[i], nums[pivot]);
+                break;
+            }
+        }
+
+        int i=pivot+1, j=n-1;
+        while(i<=j){
+            swap(nums[i++], nums[j--]);
+        }
+        
     }
 };
 
