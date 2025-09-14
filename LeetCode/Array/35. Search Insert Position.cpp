@@ -1,4 +1,5 @@
 #include<vector>
+#include<string>
 using namespace std;
 
 class Solution {
@@ -13,7 +14,8 @@ public:
                 low = mid + 1;
             } else {
                 high = mid - 1;
-            }
+            } 
+
         }
         return low; // correct position to insert
     }

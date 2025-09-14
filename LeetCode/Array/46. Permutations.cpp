@@ -2,6 +2,7 @@
 #include <vector>
 #include <algorithm>
 #include <cmath>
+#include<string>
 using namespace std;
 
 class Solution
@@ -50,8 +51,9 @@ int main()
     Solution s;
     vector<int> arr = {1, 2, 3};
     
-
+    
     auto all = s.permute(arr);
+
     for (auto &v : all) {
         for (int x : v) cout << x << ' ';
         cout << '\n';
