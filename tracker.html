@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ML Developer Portfolio</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #f9fbfd;
+      color: #0a3d62;
+      scroll-behavior: smooth;
+    }
+    a {
+      color: #ff793f;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #d35400;
+    }
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 0;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: linear-gradient(135deg, #273c75, #40739e);
+      color: white;
+      border-radius: 0 0 50% 50% / 15%;
+      padding: 4rem 2rem;
+      gap: 2rem;
+      flex-wrap: wrap;
+      animation: fadeInSlideDown 1s ease forwards;
+    }
+    .hero-text {
+      flex: 1 1 400px;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      letter-spacing: 1.5px;
+    }
+    .hero p {
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+      font-weight: 300;
+    }
+    .btn-contact {
+      background-color: #ff793f;
+      color: white;
+      padding: 0.75rem 1.6rem;
+      border: none;
+      border-radius: 25px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .btn-contact:hover {
+      background-color: #d35400;
+    }
+    .hero-image {
+      flex: 0 1 250px;
+      border-radius: 50%;
+      box-shadow: 0 0 20px rgba(255, 121, 63, 0.7);
+      max-width: 250px;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    /* Skills Section */
+    .skills {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 15px 25px rgba(0,0,0,0.05);
+      padding: 4rem 2rem;
+      animation: fadeIn 1s 0.5s ease forwards;
+      opacity: 0;
+      transform: translateY(50px);
+      max-width: 1100px;
+      margin: 3rem auto;
+    }
+    .skills h2 {
+      text-align: center;
+      margin-bottom: 3rem;
+      color: #40739e;
+      font-size: 2.5rem;
+    }
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.75rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .skills-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      background-color: #f1f2f6;
+      padding: 0.9rem 1.4rem;
+      border-radius: 30px;
+      font-weight: 600;
+      color: #273c75;
+      box-shadow: 0 4px 8px rgba(255, 121, 63, 0.3);
+      transition: transform 0.3s ease;
+      cursor: default;
+      font-size: 1.1rem;
+      user-select: none;
+    }
+    .skills-list li:hover {
+      transform: scale(1.1);
+    }
+    .skill-icon {
+      font-size: 1.5rem;
+      color: #ff793f;
+    }
+
+    /* Projects Section */
+    .projects {
+      padding: 4rem 2rem;
+      max-width: 1100px;
+      margin: 3rem auto;
+      animation: fadeIn 1s 1s ease forwards;
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    .projects h2 {
+      text-align: center;
+      margin-bottom: 2.5rem;
+      color: #40739e;
+      font-size: 2.5rem;
+    }
+    .project-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(310px,1fr));
+      gap: 2rem;
+    }
+    .project-card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      padding: 1.5rem 1.8rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .project-card:hover {
+      transform: translateY(-10px);
+    }
+    .project-card h3 {
+      margin-top: 0;
+      margin-bottom: 0.7rem;
+      color: #273c75;
+      font-size: 1.5rem;
+    }
+    .project-card p {
+      color: #57606f;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      flex-grow: 1;
+    }
+    .project-card a {
+      align-self: flex-start;
+      font-weight: 600;
+      color: #ff793f;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.3s ease;
+    }
+    .project-card a:hover {
+      border-color: #ff793f;
+    }
+
+    /* Contact Section */
+    .contact {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 15px 25px rgba(0,0,0,0.05);
+      padding: 4rem 2rem;
+      max-width: 600px;
+      margin: 3rem auto 5rem auto;
+      animation: fadeIn 1s 1.5s ease forwards;
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    .contact h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #40739e;
+      font-size: 2.5rem;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    label {
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: #273c75;
+    }
+    input, textarea {
+      padding: 0.85rem 1rem;
+      border-radius: 6px;
+      border: 1.5px solid #ccc;
+      font-size: 1rem;
+      resize: vertical;
+      transition: border-color 0.3s ease;
+    }
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #ff793f;
+      box-shadow: 0 0 8px rgba(255, 121, 63, 0.5);
+    }
+    button[type="submit"] {
+      background-color: #ff793f;
+      color: white;
+      padding: 0.85rem 1.8rem;
+      border: none;
+      border-radius: 30px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-size: 1.1rem;
+      margin-top: 1rem;
+    }
+    button[type="submit"]:hover {
+      background-color: #d35400;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background-color: #273c75;
+      color: white;
+      margin-top: 3rem;
+    }
+    footer a {
+      color: #ff793f;
+      font-weight: 600;
+      margin: 0 0.5rem;
+    }
+
+    /* Animations */
+    @keyframes fadeInSlideDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+  <!-- FontAwesome CDN for Icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-text">
+      <h1>Hi, I'm a Machine Learning Developer</h1>
+      <p>Building smart algorithms and insightful models that solve real-world problems.</p>
+      <button class="btn-contact" onclick="location.href='#contact'">Contact Me</button>
+    </div>
+    <img src="https://via.placeholder.com/250" alt="Your Photo" class="hero-image" id="hero-image" />
+  </section>
+
+  <!-- Skills Section -->
+  <section class="skills" id="skills">
+    <div class="container">
+      <h2>My Skills</h2>
+      <ul class="skills-list">
+        <li><i class="fab fa-python skill-icon" title="Python"></i>Python</li>
+        <li><i class="fas fa-brain skill-icon" title="TensorFlow"></i>TensorFlow</li>
+        <li><i class="fas fa-microchip skill-icon" title="PyTorch"></i>PyTorch</li>
+        <li><i class="fas fa-chart-line skill-icon" title="Scikit-learn"></i>Scikit-learn</li>
+        <li><i class="fas fa-database skill-icon" title="Data Analysis"></i>Data Analysis</li>
+        <li><i class="fas fa-robot skill-icon" title="Deep Learning"></i>Deep Learning</li>
+        <li><i class="fas fa-camera-retro skill-icon" title="Computer Vision"></i>Computer Vision</li>
+        <li><i class="fas fa-comments skill-icon" title="NLP"></i>Natural Language Processing</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects" id="projects">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="project-cards" id="project-cards">
+        <div class="project-card">
+          <h3>Image Classification App</h3>
+          <p>Developed a convolutional neural network to classify images with 95% accuracy.</p>
+          <a href="#" target="_blank" rel="noopener noreferrer">View Project</a>
+        </div>
+        <div class="project-card">
+          <h3>Sentiment Analysis</h3>
+          <p>Created an NLP model to analyze customer reviews and predict sentiment.</p>
+          <a href="#" target="_blank" rel="noopener noreferrer">View Project</a>
+        </div>
+        <div class="project-card">
+          <h3>Stock Price Predictor</h3>
+          <p>Implemented a time series model to predict stock market trends.</p>
+          <a href="#" target="_blank" rel="noopener noreferrer">View Project</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <h2>Contact Me</h2>
+    <form onsubmit="submitForm(event)">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Your full name" required />
+      
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="your.email@example.com" required />
+      
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+      
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Get in touch:</p>
+    <a href="mailto:ml.dev@example.com">ml.dev@example.com</a> |
+    <a href="https://github.com/mldev" target="_blank" rel="noopener noreferrer">GitHub</a> |
+    <a href="https://linkedin.com/in/mldev" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <p style="margin-top: 1rem;">© 2025 ML Developer Portfolio</p>
+  </footer>
+
+  <script>
+    // Form submission handler (example)
+    function submitForm(event) {
+      event.preventDefault();
+      alert('Thank you for your message! I will get back to you soon.');
+      event.target.reset();
+    }
+  </script>
+</body>
+</html>
+ 
